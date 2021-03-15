@@ -47,13 +47,14 @@ export default defineComponent({
       description: props.defaultValues?.description ?? "",
       status: props.defaultValues?.status ?? "",
     });
-    /**Handle form submit */
-    const handleSubmit = () => {
-      props.handleFormSubmit(formData.value);
-    };
     /**Handle go back */
     const goBack = () => {
       go(-1);
+    };
+    /**Handle form submit */
+    const handleSubmit = () => {
+      props.handleFormSubmit(formData.value);
+      goBack();
     };
     return {
       formData,
