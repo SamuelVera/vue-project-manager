@@ -62,6 +62,5 @@ p {
 input,
 select {
   padding: 8px 16px;
-  width: 100%;
 }
 </style>
