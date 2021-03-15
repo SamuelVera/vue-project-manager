@@ -1,10 +1,20 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Navbar />
+  <router-view />
 </template>
+
+<script lang="ts">
+//Vue library
+import { defineComponent } from "vue";
+//Child component
+import Navbar from "./components/Navbar.vue";
+
+export default defineComponent({
+  components: {
+    Navbar,
+  },
+});
+</script>
 
 <style>
 #app {
@@ -14,17 +24,44 @@
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.button {
+  padding: 10px 20px;
+  border: solid 1px #f8f8f8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 300ms;
+  opacity: 1;
+  border-radius: 4px;
+  width: 100%;
+  text-transform: uppercase;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.button:hover {
+  opacity: 0.7;
+}
+.button.red {
+  background-color: crimson;
+  color: white;
+}
+.button.green {
+  background-color: green;
+  color: white;
+}
+.button.blue {
+  background-color: blue;
+  color: white;
+}
+input,
+select {
+  padding: 8px 16px;
+  width: 100%;
 }
 </style>
